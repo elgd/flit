@@ -1,0 +1,7 @@
+{
+  "name": "wbcalc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
