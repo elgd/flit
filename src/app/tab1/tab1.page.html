@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      W&M calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,427 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">W&M calculator</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- PAYLOAD -->
+  <ion-item-divider sticky="true" color="medium">
+  <ion-label>
+        Payload
+      </ion-label>
+  </ion-item-divider>
+    
+  <ion-grid>
+      <ion-row class="ion-align-items-end">
+        <ion-col size="6">
+          <div>
+            <ion-item>
+              <ion-label position="floating">Row 1</ion-label>
+              <ion-input id="raw1" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col size="3" offset="3" >
+          <div class="ion-text-end">
+            <ion-note slot="end">{{momentraw1}}</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+      
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">Row 2</ion-label>
+            <ion-input id="raw2" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentraw2}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">Row 3</ion-label>
+            <ion-input id="raw3" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentraw3}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">Row 4</ion-label>
+            <ion-input id="raw4" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentraw4}}</ion-note>
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">Row 5</ion-label>
+            <ion-input id="raw5" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentraw5}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">Row 6</ion-label>
+            <ion-input id="raw6" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentraw6}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">Row 7</ion-label>
+            <ion-input id="raw7" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentraw7}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">FW Baggage</ion-label>
+            <ion-input id="fwb" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentfwb}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+        <div>
+          <ion-item>
+            <ion-label position="floating">AFT Baggage</ion-label>
+            <ion-input id="aftb" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="3" offset="3">
+        <div class="ion-text-end">
+          <ion-note slot="end">{{momentaftb}}</ion-note>
+        </div>
+      </ion-col>
+    </ion-row>   
+  </ion-grid>
+
+  <ion-item-divider color="light">
+      <ion-label>
+        Total payload
+      </ion-label>
+  </ion-item-divider>
+
+  <ion-list>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-note slot="end">{{totalPayloadWeight}}</ion-note>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Moment</ion-label>
+        <ion-note slot="end">{{totalPayloadMoment}}</ion-note>
+      </ion-item>
+  </ion-list>
+  <!-- End Payload -->
+
+  
+  <!-- Basic empty mass (BEM) -->
+  <ion-item-divider sticky="true" color="medium">
+      <ion-label>
+        Basic empty mass (BEM)
+      </ion-label>
+  </ion-item-divider>
+  <ion-list>
+      <ion-item>
+        <ion-label position="floating">Weight</ion-label>
+        <ion-input id="bemWeight" type="decimal" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Moment</ion-label>
+        <ion-input id="bemMoment" type="decimal"></ion-input>
+      </ion-item>
+  </ion-list>
+  <!-- END Basic empty mass (BEM) -->
+
+  
+  <!-- Crew seat -->
+  <ion-item-divider sticky="true" color="medium">
+   <ion-label>
+        Crew seat
+   </ion-label>
+  </ion-item-divider>
+  <ion-list>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-note slot="end">{{crewWeight}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Moment</ion-label>
+        <ion-note slot="end">{{crewMoment}}</ion-note>
+      </ion-item>
+  </ion-list>
+    <!-- END Crew seat -->
+
+  
+    <!-- Dry Operating Mass -->
+    <ion-item-divider sticky="true" color="medium">
+      <ion-label>
+        Dry Operating Mass
+      </ion-label>
+    </ion-item-divider>
+    <ion-list>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-note slot="end">{{domWeight}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Moment</ion-label>
+        <ion-note slot="end">{{domMoment}}</ion-note>
+      </ion-item>
+    </ion-list>
+    <!-- END Dry Operating Mass -->
+
+  
+    <!-- Payload Values -->
+    <ion-item-divider sticky="true" color="medium">
+      <ion-label>
+        Payload Values
+      </ion-label>
+    </ion-item-divider>
+    <ion-list>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-note slot="end">{{totalPayloadWeight}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Moment</ion-label>
+        <ion-note slot="end">{{totalPayloadMoment}}</ion-note>
+      </ion-item>
+    </ion-list>
+    <!-- END Payload Values -->
+
+  
+    <!--Zero fuel mass -->
+    <ion-item-divider sticky="true" color="medium">
+      <ion-label>
+        Zero fuel mass
+      </ion-label>
+    </ion-item-divider>
+    <ion-list>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-note slot="end">{{zfmWeight}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Moment</ion-label>
+        <ion-note slot="end">{{zfmMoment}}</ion-note>
+      </ion-item>
+    </ion-list>
+    <!-- END Zero fuel mass -->
+
+  
+    <!-- Ramp mass -->
+    <ion-item-divider sticky="true" color="medium">
+      <ion-label>
+        Ramp mass
+      </ion-label>
+    </ion-item-divider>
+    <ion-grid>
+      <ion-row class="ion-align-items-end">
+        <ion-col size="6">
+          <div>
+            <ion-item>
+              <ion-label position="floating">FUEL Mains (d1)</ion-label>
+              <ion-input id="rampMassFmWeight" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col size="3" offset="3">
+          <div class="ion-text-end">
+            <ion-note slot="end">{{rampMassFmMoment}}</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>   
+      <ion-row class="ion-align-items-end">
+        <ion-col size="6">
+          <div>
+            <ion-item>
+              <ion-label position="floating">FUEL TIPS    (d2)</ion-label>
+              <ion-input id="rampMassFtWeight" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col size="3" offset="3">
+          <div class="ion-text-end">
+            <ion-note slot="end">{{rampMassFtMoment}}</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list>
+        <ion-item>
+          <ion-label>Ramp Mass (RM) Weight</ion-label>
+          <ion-note slot="end">{{rampMassWeight}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ramp Mass (RM) Moment</ion-label>
+          <ion-note slot="end">{{rampMassMoment}}</ion-note>
+        </ion-item>
+     </ion-list>
+     <!-- END Ramp mass -->
+
+  
+    <!-- Take off -->
+    <ion-item-divider sticky="true" color="medium">
+        <ion-label>
+          Take off
+        </ion-label>
+    </ion-item-divider>
+    <ion-list>
+        <ion-item>
+          <ion-label>TAXI Fuel Weight</ion-label>
+          <ion-note slot="end">{{taxiFuelWeight}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>TAXI Fuel Moment</ion-label>
+          <ion-note slot="end">{{taxiFuelMoment}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Take Off Mass (TOM) Weight</ion-label>
+          <ion-note slot="end">{{takeOffMassWeight}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Take Off Mass (TOM) Moment</ion-label>
+          <ion-note slot="end">{{takeOffMassMoment}}</ion-note>
+        </ion-item>
+    </ion-list>
+    <!-- END Take off -->
+  
+    <!-- Landing -->
+    <ion-item-divider sticky="true" color="medium">
+        <ion-label>
+          Landing
+        </ion-label>
+    </ion-item-divider>
+    <ion-grid>
+        <ion-row class="ion-align-items-end">
+          <ion-col size="6">
+            <div>
+              <ion-item>
+                <ion-label position="floating">Trip fuel mains (d1)</ion-label>
+                <ion-input id="tfMainsWeight" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col size="3" offset="3">
+            <div class="ion-text-end">
+              <ion-note slot="end">{{tfMainsMoment}}</ion-note>
+            </div>
+          </ion-col>
+        </ion-row>   
+        <ion-row class="ion-align-items-end">
+          <ion-col size="6">
+            <div>
+              <ion-item>
+                <ion-label position="floating">FUEL TIPS (d2)</ion-label>
+                <ion-input id="tfTipsWeight" type="decimal" (ionBlur)="onChange($event)"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col size="3" offset="3">
+            <div class="ion-text-end">
+              <ion-note slot="end">{{tfTipsMoment}}</ion-note>
+            </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+          <ion-item>
+            <ion-label>LANDING MASS (LM) Weight</ion-label>
+            <ion-note slot="end">{{landingMassWeight}}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>LANDING MASS (LM) Moment</ion-label>
+            <ion-note slot="end">{{landingMassMoment}}</ion-note>
+          </ion-item>  
+    </ion-list>
+    <ion-item sticky="true" color="medium">
+        <ion-label>
+          MAC
+        </ion-label>
+    </ion-item>
+    <ion-item color="primary">
+          <ion-label>{{Mac}}%</ion-label>
+    </ion-item>                                       
+    <!-- END Landing -->
+
+
+    <!-- TODO = save Flight informations -->
+    <!-- <ion-item-divider sticky="true" color="medium">
+      <ion-label>
+        Flight informations
+      </ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Flight number</ion-label>
+      <ion-input id="flightNumber" type="" (ionBlur)="onChange($event)"></ion-input>
+    </ion-item>    
+      
+    <ion-button expand="full" (click)="saveWM($event)"> Save </ion-button> -->
+
+        
 </ion-content>
